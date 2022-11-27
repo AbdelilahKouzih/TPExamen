@@ -52,6 +52,12 @@
     <Compile Include="Dichotomique.Designer.cs">
       <DependentUpon>Dichotomique.cs</DependentUpon>
     </Compile>
+    <Compile Include="Examen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Examen.Designer.cs">
+      <DependentUpon>Examen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <EmbeddedResource Include="Dichotomique.resx">
       <DependentUpon>Dichotomique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Examen.resx">
+      <DependentUpon>Examen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

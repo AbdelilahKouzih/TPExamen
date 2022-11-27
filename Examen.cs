@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace TPExamen
 {
-    public partial class Dichotomique : Form
+    public partial class Examen : Form
     {
         private int verif;
-        public Dichotomique()
+        public Examen()
         {
             InitializeComponent();
         }
-       
+        
         static string chaine = @"Data Source=DESKTOP-ID5FAVQ\SQLEXPRESS;Initial Catalog=databaseexamen;Integrated Security=True";
 
         static SqlConnection cnx = new SqlConnection(chaine);
@@ -38,9 +38,11 @@ namespace TPExamen
             function_clear();
             txtid.Enabled = false;
             txtquestion.Enabled = false;
-         
-           
-            txtreponse.Enabled = false;
+            txtfin.Enabled = false;
+            txtdebut.Enabled = false;
+
+
+            
             btnvalider.Enabled = false;
             btnannuler.Enabled = false;
             btnmodifier.Enabled = true;
@@ -54,8 +56,10 @@ namespace TPExamen
         {
             txtid.Clear();
             txtquestion.Clear();
-           
-            txtreponse.Clear();
+            txtfin.Clear();
+            txtdebut.Clear();
+
+            
 
         }
         private void btnajouter_Click(object sender, EventArgs e)
@@ -73,19 +77,14 @@ namespace TPExamen
             cbx.Enabled = false;
             txtid.Enabled = true;
             txtquestion.Enabled = true;
-
-            txtreponse.Enabled = true;
+            txtdebut.Enabled = true;
+            txtfin.Enabled = true;
+            
             cnx.Close();
-        }
-
-        private void Dichotomique_Load(object sender, EventArgs e)
-        {
-            etatinitial();
         }
 
         private void btnmodifier_Click(object sender, EventArgs e)
         {
-
             verif = 2;
 
             connection();
@@ -99,8 +98,9 @@ namespace TPExamen
             cbx.Enabled = true;
             txtid.Enabled = true;
             txtquestion.Enabled = true;
-
-            txtreponse.Enabled = true;
+            txtdebut.Enabled = true;
+            txtfin.Enabled = true;
+           
 
             cnx.Close();
         }
@@ -120,25 +120,23 @@ namespace TPExamen
             cbx.Enabled = false;
             txtid.Enabled = true;
             txtquestion.Enabled = false;
-
-            txtreponse.Enabled = false;
-
+            txtdebut.Enabled = false;
+            txtfin.Enabled = false;
             cnx.Close();
-
         }
 
         private void btnvalider_Click(object sender, EventArgs e)
         {
             if (verif == 1)
             {
-                if (txtid.Text == "" || txtquestion.Text == "" || txtreponse.Text == "")
+                if (txtid.Text == "" || txtquestion.Text == "" || txtdebut.Text == "" || txtdebut.Text == "")
                 {
                     MessageBox.Show("vous devez remplir les champs !!");
                     return;
                 }
                 connection();
 
-                cmd.CommandText = "insert into Dichotomique(id,question,reponse) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtreponse.Text + "') ";
+                cmd.CommandText = "insert into Examen(id,id_question,date_debut,date_fin) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtdebut.Text + "','" + txtfin.Text + "') ";
                 cmd.ExecuteNonQuery();
                 etatinitial();
                 cnx.Close();
@@ -148,14 +146,14 @@ namespace TPExamen
 
             if (verif == 2)
             {
-                if (txtid.Text == "" || txtreponse.Text == "")
+                if (txtid.Text == "")
                 {
-                    MessageBox.Show("vous devez remplir les champs !!");
+                    MessageBox.Show("vous devez remplir le champ d'identifiant !!");
                     return;
                 }
                 connection();
 
-                cmd.CommandText = "update Dichotomique set id ='" + txtid.Text + "' , question = '" + txtquestion.Text + "', reponse = '" + txtreponse.Text + "' where id='" + txtid.Text + "' ";
+                cmd.CommandText = "update Examen set id ='" + txtid.Text + "' , id_question = '" + txtquestion.Text + "', date_debut = '" + txtdebut.Text + "', date_fin = '" + txtfin.Text + "' where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
                 cnx.Close();
 
@@ -173,7 +171,7 @@ namespace TPExamen
                     return;
                 }
                 connection();
-                cmd.CommandText = "delete from Dichotomique where id='" + txtid.Text + "' ";
+                cmd.CommandText = "delete from Examen where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(" les données bien supprimer!");
 
@@ -181,23 +179,16 @@ namespace TPExamen
 
                 etatinitial();
                 cnx.Close();
+            } }
 
-
-
-            }
-        }
-
-       
-
-       
-
-        private void btnannuler_Click_1(object sender, EventArgs e)
+        private void btnannuler_Click(object sender, EventArgs e)
         {
             etatinitial();
         }
 
-        private void btnafficher_Click_1(object sender, EventArgs e)
+        private void btnafficher_Click(object sender, EventArgs e)
         {
+
             connection();
 
             btnannuler.Enabled = false;
@@ -209,8 +200,9 @@ namespace TPExamen
             txtid.Enabled = false;
             txtquestion.Enabled = false;
 
-            txtreponse.Enabled = false;
-            cmd.CommandText = "select * from Dichotomique";
+            txtdebut.Enabled = false;
+            txtfin.Enabled = false;
+            cmd.CommandText = "select * from Examen";
 
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -220,16 +212,20 @@ namespace TPExamen
             cnx.Close();
             txtid.DataBindings.Clear();
             txtquestion.DataBindings.Clear();
-            txtreponse.DataBindings.Clear();
-
-
-
+            txtdebut.DataBindings.Clear();
+            txtfin.DataBindings.Clear();
 
             txtid.DataBindings.Add("text", cbx.DataSource, "id");
-            txtquestion.DataBindings.Add("text", cbx.DataSource, "question");
-            txtreponse.DataBindings.Add("text", cbx.DataSource, "reponse");
+            txtquestion.DataBindings.Add("text", cbx.DataSource, "id_question");
+            txtdebut.DataBindings.Add("text", cbx.DataSource, "date_debut");
+            txtfin.DataBindings.Add("text", cbx.DataSource, "date_fin");
 
 
+        }
+
+        private void Examen_Load(object sender, EventArgs e)
+        {
+            etatinitial();
         }
     }
 }
