@@ -250,6 +250,11 @@ namespace TPExamen
 
             cnx.Close();
         }
+
+        private void txtreponse_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

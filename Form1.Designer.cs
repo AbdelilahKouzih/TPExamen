@@ -81,9 +81,9 @@
             // 
             // btnafficher
             // 
-            this.btnafficher.Location = new System.Drawing.Point(568, 427);
+            this.btnafficher.Location = new System.Drawing.Point(565, 427);
             this.btnafficher.Name = "btnafficher";
-            this.btnafficher.Size = new System.Drawing.Size(113, 38);
+            this.btnafficher.Size = new System.Drawing.Size(116, 38);
             this.btnafficher.TabIndex = 19;
             this.btnafficher.Text = "Afficher";
             this.btnafficher.UseVisualStyleBackColor = true;
@@ -109,7 +109,7 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(178, 81);
+            this.txtid.Location = new System.Drawing.Point(162, 78);
             this.txtid.Multiline = true;
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(286, 31);
@@ -120,7 +120,7 @@
             // 
             this.btnannuler.Location = new System.Drawing.Point(820, 427);
             this.btnannuler.Name = "btnannuler";
-            this.btnannuler.Size = new System.Drawing.Size(113, 38);
+            this.btnannuler.Size = new System.Drawing.Size(110, 38);
             this.btnannuler.TabIndex = 15;
             this.btnannuler.Text = "Annuler";
             this.btnannuler.UseVisualStyleBackColor = true;
@@ -138,9 +138,9 @@
             // 
             // btnsupprimer
             // 
-            this.btnsupprimer.Location = new System.Drawing.Point(697, 427);
+            this.btnsupprimer.Location = new System.Drawing.Point(696, 427);
             this.btnsupprimer.Name = "btnsupprimer";
-            this.btnsupprimer.Size = new System.Drawing.Size(117, 38);
+            this.btnsupprimer.Size = new System.Drawing.Size(118, 38);
             this.btnsupprimer.TabIndex = 13;
             this.btnsupprimer.Text = "Supprimer";
             this.btnsupprimer.UseVisualStyleBackColor = true;
@@ -168,11 +168,12 @@
             // 
             // txtreponse
             // 
-            this.txtreponse.Location = new System.Drawing.Point(662, 243);
+            this.txtreponse.Location = new System.Drawing.Point(646, 243);
             this.txtreponse.Multiline = true;
             this.txtreponse.Name = "txtreponse";
             this.txtreponse.Size = new System.Drawing.Size(263, 28);
             this.txtreponse.TabIndex = 10;
+            this.txtreponse.TextChanged += new System.EventHandler(this.txtreponse_TextChanged);
             // 
             // lblreponse
             // 
@@ -234,7 +235,7 @@
             // 
             // txtquestion
             // 
-            this.txtquestion.Location = new System.Drawing.Point(178, 118);
+            this.txtquestion.Location = new System.Drawing.Point(162, 118);
             this.txtquestion.Multiline = true;
             this.txtquestion.Name = "txtquestion";
             this.txtquestion.Size = new System.Drawing.Size(286, 31);

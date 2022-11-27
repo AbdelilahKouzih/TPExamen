@@ -53,6 +53,7 @@
             this.btnafficher.TabIndex = 19;
             this.btnafficher.Text = "Afficher";
             this.btnafficher.UseVisualStyleBackColor = true;
+            this.btnafficher.Click += new System.EventHandler(this.btnafficher_Click);
             // 
             // cbx
             // 
@@ -88,6 +89,7 @@
             this.btnannuler.TabIndex = 15;
             this.btnannuler.Text = "Annuler";
             this.btnannuler.UseVisualStyleBackColor = true;
+            this.btnannuler.Click += new System.EventHandler(this.btnannuler_Click);
             // 
             // btnvalider
             // 
@@ -97,6 +99,7 @@
             this.btnvalider.TabIndex = 14;
             this.btnvalider.Text = "Valider";
             this.btnvalider.UseVisualStyleBackColor = true;
+            this.btnvalider.Click += new System.EventHandler(this.btnvalider_Click);
             // 
             // btnsupprimer
             // 
@@ -106,6 +109,7 @@
             this.btnsupprimer.TabIndex = 13;
             this.btnsupprimer.Text = "Supprimer";
             this.btnsupprimer.UseVisualStyleBackColor = true;
+            this.btnsupprimer.Click += new System.EventHandler(this.btnsupprimer_Click);
             // 
             // btnmodifier
             // 
@@ -115,6 +119,7 @@
             this.btnmodifier.TabIndex = 12;
             this.btnmodifier.Text = "Modifier";
             this.btnmodifier.UseVisualStyleBackColor = true;
+            this.btnmodifier.Click += new System.EventHandler(this.btnmodifier_Click);
             // 
             // btnajouter
             // 
@@ -124,6 +129,7 @@
             this.btnajouter.TabIndex = 11;
             this.btnajouter.Text = "Ajouter";
             this.btnajouter.UseVisualStyleBackColor = true;
+            this.btnajouter.Click += new System.EventHandler(this.btnajouter_Click);
             // 
             // txtreponse
             // 
