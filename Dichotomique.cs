@@ -59,12 +59,27 @@ namespace TPExamen
         }
         private void btnajouter_Click(object sender, EventArgs e)
         {
+            verif = 1;
+            connection();
+            function_clear();
 
+            btnannuler.Enabled = true;
+            btnmodifier.Enabled = false;
+            btnvalider.Enabled = true;
+            btnajouter.Enabled = false;
+            btnsupprimer.Enabled = false;
+            btnafficher.Enabled = false;
+            cbx.Enabled = false;
+            txtid.Enabled = true;
+            txtquestion.Enabled = true;
+
+            txtreponse.Enabled = true;
+            cnx.Close();
         }
 
         private void Dichotomique_Load(object sender, EventArgs e)
         {
-
+            etatinitial();
         }
 
         private void btnmodifier_Click(object sender, EventArgs e)
@@ -139,7 +154,7 @@ namespace TPExamen
                 }
                 connection();
 
-                cmd.CommandText = "update Dichotomique set id ='" + txtid.Text + "' ,question = '" + txtquestion.Text + "',reponse = '" + txtreponse.Text + "' where id='" + txtid.Text + "' ";
+                cmd.CommandText = "update Dichotomique set id ='" + txtid.Text + "' , question = '" + txtquestion.Text + "', reponse = '" + txtreponse.Text + "' where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
                 cnx.Close();
 
@@ -171,12 +186,16 @@ namespace TPExamen
             }
         }
 
-        private void btnannuler_Click(object sender, EventArgs e)
+       
+
+       
+
+        private void btnannuler_Click_1(object sender, EventArgs e)
         {
             etatinitial();
         }
 
-        private void btnafficher_Click(object sender, EventArgs e)
+        private void btnafficher_Click_1(object sender, EventArgs e)
         {
             connection();
 
@@ -190,7 +209,7 @@ namespace TPExamen
             txtquestion.Enabled = false;
 
             txtreponse.Enabled = false;
-            cmd.CommandText = "select * from QuestionOuvert";
+            cmd.CommandText = "select * from Dichotomique";
 
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -208,10 +227,8 @@ namespace TPExamen
             txtid.DataBindings.Add("text", cbx.DataSource, "id");
             txtquestion.DataBindings.Add("text", cbx.DataSource, "question");
             txtreponse.DataBindings.Add("text", cbx.DataSource, "reponse");
-        
-    
-}
 
-      
+
+        }
     }
 }

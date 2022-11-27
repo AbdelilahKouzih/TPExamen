@@ -39,11 +39,11 @@
             this.btnajouter = new System.Windows.Forms.Button();
             this.lblquestion = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtquestion = new System.Windows.Forms.TextBox();
-            this.opV = new System.Windows.Forms.RadioButton();
-            this.opF = new System.Windows.Forms.RadioButton();
-            this.lblrep = new System.Windows.Forms.Label();
             this.txtreponse = new System.Windows.Forms.TextBox();
+            this.lblrep = new System.Windows.Forms.Label();
+            this.opF = new System.Windows.Forms.RadioButton();
+            this.opV = new System.Windows.Forms.RadioButton();
+            this.txtquestion = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,7 @@
             this.btnafficher.TabIndex = 19;
             this.btnafficher.Text = "Afficher";
             this.btnafficher.UseVisualStyleBackColor = true;
+            this.btnafficher.Click += new System.EventHandler(this.btnafficher_Click_1);
             // 
             // cbx
             // 
@@ -166,24 +167,21 @@
             this.panel1.Size = new System.Drawing.Size(1029, 489);
             this.panel1.TabIndex = 2;
             // 
-            // txtquestion
+            // txtreponse
             // 
-            this.txtquestion.Location = new System.Drawing.Point(178, 203);
-            this.txtquestion.Multiline = true;
-            this.txtquestion.Name = "txtquestion";
-            this.txtquestion.Size = new System.Drawing.Size(286, 31);
-            this.txtquestion.TabIndex = 2;
+            this.txtreponse.Location = new System.Drawing.Point(652, 204);
+            this.txtreponse.Name = "txtreponse";
+            this.txtreponse.Size = new System.Drawing.Size(246, 30);
+            this.txtreponse.TabIndex = 23;
             // 
-            // opV
+            // lblrep
             // 
-            this.opV.AutoSize = true;
-            this.opV.Location = new System.Drawing.Point(199, 285);
-            this.opV.Name = "opV";
-            this.opV.Size = new System.Drawing.Size(68, 29);
-            this.opV.TabIndex = 20;
-            this.opV.TabStop = true;
-            this.opV.Text = "Vrai";
-            this.opV.UseVisualStyleBackColor = true;
+            this.lblrep.AutoSize = true;
+            this.lblrep.Location = new System.Drawing.Point(535, 209);
+            this.lblrep.Name = "lblrep";
+            this.lblrep.Size = new System.Drawing.Size(101, 25);
+            this.lblrep.TabIndex = 22;
+            this.lblrep.Text = "Reponse :";
             // 
             // opF
             // 
@@ -196,21 +194,24 @@
             this.opF.Text = "Faux";
             this.opF.UseVisualStyleBackColor = true;
             // 
-            // lblrep
+            // opV
             // 
-            this.lblrep.AutoSize = true;
-            this.lblrep.Location = new System.Drawing.Point(535, 209);
-            this.lblrep.Name = "lblrep";
-            this.lblrep.Size = new System.Drawing.Size(101, 25);
-            this.lblrep.TabIndex = 22;
-            this.lblrep.Text = "Reponse :";
+            this.opV.AutoSize = true;
+            this.opV.Location = new System.Drawing.Point(199, 285);
+            this.opV.Name = "opV";
+            this.opV.Size = new System.Drawing.Size(68, 29);
+            this.opV.TabIndex = 20;
+            this.opV.TabStop = true;
+            this.opV.Text = "Vrai";
+            this.opV.UseVisualStyleBackColor = true;
             // 
-            // txtreponse
+            // txtquestion
             // 
-            this.txtreponse.Location = new System.Drawing.Point(652, 204);
-            this.txtreponse.Name = "txtreponse";
-            this.txtreponse.Size = new System.Drawing.Size(246, 30);
-            this.txtreponse.TabIndex = 23;
+            this.txtquestion.Location = new System.Drawing.Point(178, 203);
+            this.txtquestion.Multiline = true;
+            this.txtquestion.Name = "txtquestion";
+            this.txtquestion.Size = new System.Drawing.Size(286, 31);
+            this.txtquestion.TabIndex = 2;
             // 
             // Dichotomique
             // 
