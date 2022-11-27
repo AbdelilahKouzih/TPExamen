@@ -79,6 +79,7 @@ namespace TPExamen
             txtquestion.Enabled = true;
           
             txtreponse.Enabled = true;
+            cnx.Close();
         }
 
         private void btnmodifier_Click(object sender, EventArgs e)
@@ -136,7 +137,7 @@ namespace TPExamen
                     }
                     connection();
 
-                    cmd.CommandText = "insert into QuestionQCM(id,question,option1,option2,option3,reponse) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtreponse.Text + "') ";
+                    cmd.CommandText = "insert into QuestionOuvert(id,question,reponse) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtreponse.Text + "') ";
                     cmd.ExecuteNonQuery();
                     etatinitial();
                     cnx.Close();
@@ -153,7 +154,7 @@ namespace TPExamen
                     }
                     connection();
 
-                    cmd.CommandText = "update QuestionQCM set id ='" + txtid.Text + "' ,question = '" + txtquestion.Text + "',reponse = '" + txtreponse.Text + "' where id='" + txtid.Text + "' ";
+                    cmd.CommandText = "update QuestionOuvert set id ='" + txtid.Text + "' ,question = '" + txtquestion.Text + "',reponse = '" + txtreponse.Text + "' where id='" + txtid.Text + "' ";
                     cmd.ExecuteNonQuery();
                     cnx.Close();
 
@@ -171,7 +172,7 @@ namespace TPExamen
                         return;
                     }
                     connection();
-                    cmd.CommandText = "delete from QuestionQCM where id='" + txtid.Text + "' ";
+                    cmd.CommandText = "delete from QuestionOuvert where id='" + txtid.Text + "' ";
                     cmd.ExecuteNonQuery();
                     MessageBox.Show(" les données bien supprimer!");
 
@@ -204,7 +205,7 @@ namespace TPExamen
             txtquestion.Enabled = false;
           
             txtreponse.Enabled = false;
-            cmd.CommandText = "select * from QuestionQCM";
+            cmd.CommandText = "select * from QuestionOuvert";
 
             DataTable dt = new DataTable();
             adapter.Fill(dt);
