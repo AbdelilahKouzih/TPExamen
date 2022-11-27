@@ -15,6 +15,12 @@ namespace TPExamen
         public QuestionOuvert()
         {
             InitializeComponent();
+            
+        }
+
+        private void QuestionOuvert_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

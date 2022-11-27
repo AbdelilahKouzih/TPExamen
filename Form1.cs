@@ -19,20 +19,20 @@ namespace TPExamen
             InitializeComponent();
         }
 
-        static string chaine = @"Data Source=DESKTOP-ID5FAVQ\SQLEXPRESS;Initial Catalog=databaseexamen;Integrated Security=True";
+       static  string chaine = @"Data Source=DESKTOP-ID5FAVQ\SQLEXPRESS;Initial Catalog=databaseexamen;Integrated Security=True";
 
-        static SqlConnection cnx = new SqlConnection(chaine);
-        static SqlCommand cmd = new SqlCommand();
-        static SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+       static  SqlConnection cnx = new SqlConnection(chaine);
+       static SqlCommand cmd = new SqlCommand();
+       static SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-        public void connection()
+            private void connection()
         {
             cnx.Open();
             cmd.Connection = cnx;
 
 
         }
-        public void etatinitial()
+            private void etatinitial()
         {
 
             function_clear();
@@ -51,7 +51,7 @@ namespace TPExamen
             btnajouter.Enabled = true;
         }
 
-        public void function_clear()
+            private void function_clear()
         {
             txtid.Clear();
             txtquestion.Clear();
@@ -61,12 +61,12 @@ namespace TPExamen
             txtreponse.Clear();
 
         }
-        private void lblreponse_Click(object sender, EventArgs e)
+            private void lblreponse_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnajouter_Click(object sender, EventArgs e)
+            private void btnajouter_Click(object sender, EventArgs e)
         {
             verif = 1;
             connection();
@@ -91,7 +91,7 @@ namespace TPExamen
             cnx.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -252,3 +252,4 @@ namespace TPExamen
         }
     }
 }
+
