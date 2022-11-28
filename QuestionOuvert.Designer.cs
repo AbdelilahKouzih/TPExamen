@@ -42,6 +42,7 @@
             this.lblquestion = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtquestion = new System.Windows.Forms.TextBox();
+            this.btnexamen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,6 +162,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.btnexamen);
             this.panel1.Controls.Add(this.btnafficher);
             this.panel1.Controls.Add(this.cbx);
             this.panel1.Controls.Add(this.label1);
@@ -177,7 +179,7 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(-1, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1007, 480);
+            this.panel1.Size = new System.Drawing.Size(1005, 480);
             this.panel1.TabIndex = 1;
             // 
             // txtquestion
@@ -188,11 +190,21 @@
             this.txtquestion.Size = new System.Drawing.Size(286, 31);
             this.txtquestion.TabIndex = 2;
             // 
+            // btnexamen
+            // 
+            this.btnexamen.Location = new System.Drawing.Point(785, 49);
+            this.btnexamen.Name = "btnexamen";
+            this.btnexamen.Size = new System.Drawing.Size(113, 38);
+            this.btnexamen.TabIndex = 20;
+            this.btnexamen.Text = "Examen";
+            this.btnexamen.UseVisualStyleBackColor = true;
+            this.btnexamen.Click += new System.EventHandler(this.btnexamen_Click);
+            // 
             // QuestionOuvert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 475);
+            this.ClientSize = new System.Drawing.Size(957, 475);
             this.Controls.Add(this.panel1);
             this.Name = "QuestionOuvert";
             this.Text = "QuestionOuvert";
@@ -219,5 +231,6 @@
         private System.Windows.Forms.Label lblquestion;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtquestion;
+        private System.Windows.Forms.Button btnexamen;
     }
 }

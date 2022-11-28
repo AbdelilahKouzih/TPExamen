@@ -40,6 +40,8 @@ namespace TPExamen
             txtquestion.Enabled = false;
             txtfin.Enabled = false;
             txtdebut.Enabled = false;
+            txtqcm.Enabled = false;
+            txtouvert.Enabled = false;
 
 
             
@@ -58,6 +60,8 @@ namespace TPExamen
             txtquestion.Clear();
             txtfin.Clear();
             txtdebut.Clear();
+            txtqcm.Clear();
+            txtouvert.Clear();
 
             
 
@@ -79,6 +83,10 @@ namespace TPExamen
             txtquestion.Enabled = true;
             txtdebut.Enabled = true;
             txtfin.Enabled = true;
+            txtouvert.Enabled = true;
+            txtqcm.Enabled = true;
+            
+
             
             cnx.Close();
         }
@@ -88,7 +96,7 @@ namespace TPExamen
             verif = 2;
 
             connection();
-
+            function_clear();
             btnannuler.Enabled = true;
             btnmodifier.Enabled = false;
             btnvalider.Enabled = true;
@@ -100,6 +108,8 @@ namespace TPExamen
             txtquestion.Enabled = true;
             txtdebut.Enabled = true;
             txtfin.Enabled = true;
+            txtouvert.Enabled = true;
+            txtqcm.Enabled = true;
            
 
             cnx.Close();
@@ -122,6 +132,8 @@ namespace TPExamen
             txtquestion.Enabled = false;
             txtdebut.Enabled = false;
             txtfin.Enabled = false;
+            txtouvert.Enabled = false;
+            txtqcm.Enabled = false;
             cnx.Close();
         }
 
@@ -136,7 +148,7 @@ namespace TPExamen
                 }
                 connection();
 
-                cmd.CommandText = "insert into Examen(id,id_question,date_debut,date_fin) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtdebut.Text + "','" + txtfin.Text + "') ";
+                cmd.CommandText = "insert into Examen(id,id_questiondi,id_questionqcm,id_questionouvert,date_debut,date_fin) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtqcm.Text + "','" + txtouvert.Text + "','" + txtdebut.Text + "','" + txtfin.Text + "') ";
                 cmd.ExecuteNonQuery();
                 etatinitial();
                 cnx.Close();
@@ -153,7 +165,7 @@ namespace TPExamen
                 }
                 connection();
 
-                cmd.CommandText = "update Examen set id ='" + txtid.Text + "' , id_question = '" + txtquestion.Text + "', date_debut = '" + txtdebut.Text + "', date_fin = '" + txtfin.Text + "' where id='" + txtid.Text + "' ";
+                cmd.CommandText = "update Examen set id ='" + txtid.Text + "' , id_questiondi = '" + txtquestion.Text + "', id_questionqcm = '" + txtqcm.Text + "', id_questionouvert = '" + txtouvert.Text + "', date_debut = '" + txtdebut.Text + "', date_fin = '" + txtfin.Text + "' where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
                 cnx.Close();
 
@@ -214,11 +226,16 @@ namespace TPExamen
             txtquestion.DataBindings.Clear();
             txtdebut.DataBindings.Clear();
             txtfin.DataBindings.Clear();
+            txtqcm.DataBindings.Clear();
+            txtouvert.DataBindings.Clear();
 
             txtid.DataBindings.Add("text", cbx.DataSource, "id");
-            txtquestion.DataBindings.Add("text", cbx.DataSource, "id_question");
+            txtquestion.DataBindings.Add("text", cbx.DataSource, "id_questiondi");
             txtdebut.DataBindings.Add("text", cbx.DataSource, "date_debut");
             txtfin.DataBindings.Add("text", cbx.DataSource, "date_fin");
+            txtqcm.DataBindings.Add("text", cbx.DataSource, "id_questionqcm");
+            txtouvert.DataBindings.Add("text", cbx.DataSource, "id_questionouvert");
+
 
 
         }
@@ -226,6 +243,30 @@ namespace TPExamen
         private void Examen_Load(object sender, EventArgs e)
         {
             etatinitial();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnqcm_Click(object sender, EventArgs e)
+        {
+            Form1 f= new Form1();
+            f.Show();
+        }
+
+        private void btnouvert_Click(object sender, EventArgs e)
+        {
+            QuestionOuvert f = new QuestionOuvert();
+            f.Show();
+        }
+
+        private void btndi_Click(object sender, EventArgs e)
+        {
+
+           Dichotomique  f = new Dichotomique();
+            f.Show();
         }
     }
 }

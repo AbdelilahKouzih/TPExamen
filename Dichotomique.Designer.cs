@@ -44,6 +44,7 @@
             this.opF = new System.Windows.Forms.RadioButton();
             this.opV = new System.Windows.Forms.RadioButton();
             this.txtquestion = new System.Windows.Forms.TextBox();
+            this.btnexamen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,6 +147,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.btnexamen);
             this.panel1.Controls.Add(this.txtreponse);
             this.panel1.Controls.Add(this.lblrep);
             this.panel1.Controls.Add(this.opF);
@@ -213,6 +215,16 @@
             this.txtquestion.Size = new System.Drawing.Size(286, 31);
             this.txtquestion.TabIndex = 2;
             // 
+            // btnexamen
+            // 
+            this.btnexamen.Location = new System.Drawing.Point(785, 46);
+            this.btnexamen.Name = "btnexamen";
+            this.btnexamen.Size = new System.Drawing.Size(113, 38);
+            this.btnexamen.TabIndex = 24;
+            this.btnexamen.Text = "Examen";
+            this.btnexamen.UseVisualStyleBackColor = true;
+            this.btnexamen.Click += new System.EventHandler(this.btnexamen_Click);
+            // 
             // Dichotomique
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -246,5 +258,6 @@
         private System.Windows.Forms.Label lblrep;
         private System.Windows.Forms.RadioButton opF;
         private System.Windows.Forms.RadioButton opV;
+        private System.Windows.Forms.Button btnexamen;
     }
 }

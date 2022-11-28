@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TPExamen
 {
@@ -254,6 +255,18 @@ namespace TPExamen
         private void txtreponse_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnexamen_Click(object sender, EventArgs e)
+        {
+            Examen D = new Examen();
+            D.Show();
+        }
+
+        private void cbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+           
         }
     }
 }

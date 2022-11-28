@@ -231,5 +231,11 @@ namespace TPExamen
 
 
         }
+
+        private void btnexamen_Click(object sender, EventArgs e)
+        {
+            Examen D = new Examen();
+            D.Show();
+        }
     }
 }

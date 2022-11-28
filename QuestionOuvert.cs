@@ -224,5 +224,11 @@ namespace TPExamen
             txtquestion.DataBindings.Add("text", cbx.DataSource, "question");
             txtreponse.DataBindings.Add("text", cbx.DataSource, "reponse");
         }
+
+        private void btnexamen_Click(object sender, EventArgs e)
+        {
+            Examen D = new Examen();
+            D.Show();
+        }
     }
 }

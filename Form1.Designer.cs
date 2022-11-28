@@ -48,12 +48,14 @@
             this.op1 = new System.Windows.Forms.Label();
             this.txtquestion = new System.Windows.Forms.TextBox();
             this.lblquestion = new System.Windows.Forms.Label();
+            this.btnexamen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.btnexamen);
             this.panel1.Controls.Add(this.btnafficher);
             this.panel1.Controls.Add(this.cbx);
             this.panel1.Controls.Add(this.label1);
@@ -96,6 +98,7 @@
             this.cbx.Name = "cbx";
             this.cbx.Size = new System.Drawing.Size(275, 33);
             this.cbx.TabIndex = 18;
+            this.cbx.SelectedIndexChanged += new System.EventHandler(this.cbx_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -109,7 +112,7 @@
             // 
             // txtid
             // 
-            this.txtid.Location = new System.Drawing.Point(162, 78);
+            this.txtid.Location = new System.Drawing.Point(172, 78);
             this.txtid.Multiline = true;
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(286, 31);
@@ -187,21 +190,21 @@
             // 
             // txtop2
             // 
-            this.txtop2.Location = new System.Drawing.Point(162, 273);
+            this.txtop2.Location = new System.Drawing.Point(172, 273);
             this.txtop2.Name = "txtop2";
             this.txtop2.Size = new System.Drawing.Size(286, 30);
             this.txtop2.TabIndex = 8;
             // 
             // txtop3
             // 
-            this.txtop3.Location = new System.Drawing.Point(162, 326);
+            this.txtop3.Location = new System.Drawing.Point(172, 328);
             this.txtop3.Name = "txtop3";
             this.txtop3.Size = new System.Drawing.Size(286, 30);
             this.txtop3.TabIndex = 7;
             // 
             // txtop1
             // 
-            this.txtop1.Location = new System.Drawing.Point(162, 217);
+            this.txtop1.Location = new System.Drawing.Point(172, 217);
             this.txtop1.Name = "txtop1";
             this.txtop1.Size = new System.Drawing.Size(286, 30);
             this.txtop1.TabIndex = 6;
@@ -235,7 +238,7 @@
             // 
             // txtquestion
             // 
-            this.txtquestion.Location = new System.Drawing.Point(162, 118);
+            this.txtquestion.Location = new System.Drawing.Point(172, 118);
             this.txtquestion.Multiline = true;
             this.txtquestion.Name = "txtquestion";
             this.txtquestion.Size = new System.Drawing.Size(286, 31);
@@ -250,6 +253,16 @@
             this.lblquestion.Size = new System.Drawing.Size(117, 25);
             this.lblquestion.TabIndex = 1;
             this.lblquestion.Text = "Question    :";
+            // 
+            // btnexamen
+            // 
+            this.btnexamen.Location = new System.Drawing.Point(839, 318);
+            this.btnexamen.Name = "btnexamen";
+            this.btnexamen.Size = new System.Drawing.Size(110, 38);
+            this.btnexamen.TabIndex = 20;
+            this.btnexamen.Text = "Examen";
+            this.btnexamen.UseVisualStyleBackColor = true;
+            this.btnexamen.Click += new System.EventHandler(this.btnexamen_Click);
             // 
             // Form1
             // 
@@ -288,6 +301,7 @@
         private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Button btnafficher;
         private System.Windows.Forms.ComboBox cbx;
+        private System.Windows.Forms.Button btnexamen;
     }
 }
 
