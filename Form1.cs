@@ -149,7 +149,7 @@ namespace TPExamen
                 cmd.CommandText = "delete from QuestionQCM where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(" les données bien supprimer!");
-
+                cbx_affichage();
                 cnx.Close();
 
                 etatinitial();
@@ -172,7 +172,7 @@ namespace TPExamen
             etatinitial();
         }
 
-        private void btnafficher_Click(object sender, EventArgs e)
+      /*  private void btnafficher_Click(object sender, EventArgs e)
         {
             connection();
 
@@ -210,7 +210,7 @@ namespace TPExamen
             txtid.DataBindings.Add("text", cbx.DataSource, "id");
             txtquestion.DataBindings.Add("text", cbx.DataSource, "question"); 
             txtreponse.DataBindings.Add("text", cbx.DataSource, "reponse");
-        }
+        }*/
 
         private void btnmodifier_Click(object sender, EventArgs e)
         {

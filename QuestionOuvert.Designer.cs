@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnafficher = new System.Windows.Forms.Button();
             this.cbx = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
@@ -41,20 +40,10 @@
             this.lblreponse = new System.Windows.Forms.Label();
             this.lblquestion = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtquestion = new System.Windows.Forms.TextBox();
             this.btnexamen = new System.Windows.Forms.Button();
+            this.txtquestion = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnafficher
-            // 
-            this.btnafficher.Location = new System.Drawing.Point(785, 417);
-            this.btnafficher.Name = "btnafficher";
-            this.btnafficher.Size = new System.Drawing.Size(113, 38);
-            this.btnafficher.TabIndex = 19;
-            this.btnafficher.Text = "Afficher";
-            this.btnafficher.UseVisualStyleBackColor = true;
-            this.btnafficher.Click += new System.EventHandler(this.btnafficher_Click);
             // 
             // cbx
             // 
@@ -163,7 +152,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.Controls.Add(this.btnexamen);
-            this.panel1.Controls.Add(this.btnafficher);
             this.panel1.Controls.Add(this.cbx);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtid);
@@ -182,14 +170,6 @@
             this.panel1.Size = new System.Drawing.Size(1005, 480);
             this.panel1.TabIndex = 1;
             // 
-            // txtquestion
-            // 
-            this.txtquestion.Location = new System.Drawing.Point(178, 203);
-            this.txtquestion.Multiline = true;
-            this.txtquestion.Name = "txtquestion";
-            this.txtquestion.Size = new System.Drawing.Size(286, 31);
-            this.txtquestion.TabIndex = 2;
-            // 
             // btnexamen
             // 
             this.btnexamen.Location = new System.Drawing.Point(785, 49);
@@ -199,6 +179,14 @@
             this.btnexamen.Text = "Examen";
             this.btnexamen.UseVisualStyleBackColor = true;
             this.btnexamen.Click += new System.EventHandler(this.btnexamen_Click);
+            // 
+            // txtquestion
+            // 
+            this.txtquestion.Location = new System.Drawing.Point(178, 203);
+            this.txtquestion.Multiline = true;
+            this.txtquestion.Name = "txtquestion";
+            this.txtquestion.Size = new System.Drawing.Size(286, 31);
+            this.txtquestion.TabIndex = 2;
             // 
             // QuestionOuvert
             // 
@@ -216,8 +204,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnafficher;
         private System.Windows.Forms.ComboBox cbx;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtid;

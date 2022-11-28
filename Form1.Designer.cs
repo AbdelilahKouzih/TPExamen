@@ -119,7 +119,7 @@
             // 
             // btnannuler
             // 
-            this.btnannuler.Location = new System.Drawing.Point(839, 427);
+            this.btnannuler.Location = new System.Drawing.Point(665, 427);
             this.btnannuler.Name = "btnannuler";
             this.btnannuler.Size = new System.Drawing.Size(110, 38);
             this.btnannuler.TabIndex = 15;
@@ -129,7 +129,7 @@
             // 
             // btnvalider
             // 
-            this.btnvalider.Location = new System.Drawing.Point(694, 427);
+            this.btnvalider.Location = new System.Drawing.Point(530, 427);
             this.btnvalider.Name = "btnvalider";
             this.btnvalider.Size = new System.Drawing.Size(110, 38);
             this.btnvalider.TabIndex = 14;

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnafficher = new System.Windows.Forms.Button();
             this.cbx = new System.Windows.Forms.ComboBox();
             this.lblex = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
@@ -41,28 +40,18 @@
             this.lblreponse = new System.Windows.Forms.Label();
             this.lblquestionouvert = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btndi = new System.Windows.Forms.Button();
+            this.btnouvert = new System.Windows.Forms.Button();
+            this.btnqcm = new System.Windows.Forms.Button();
+            this.txtqcm = new System.Windows.Forms.TextBox();
+            this.txtouvert = new System.Windows.Forms.TextBox();
+            this.lblqcm = new System.Windows.Forms.Label();
+            this.lbldi = new System.Windows.Forms.Label();
             this.txtfin = new System.Windows.Forms.TextBox();
             this.lblfin = new System.Windows.Forms.Label();
             this.txtquestion = new System.Windows.Forms.TextBox();
-            this.lbldi = new System.Windows.Forms.Label();
-            this.lblqcm = new System.Windows.Forms.Label();
-            this.txtouvert = new System.Windows.Forms.TextBox();
-            this.txtqcm = new System.Windows.Forms.TextBox();
-            this.btnqcm = new System.Windows.Forms.Button();
-            this.btnouvert = new System.Windows.Forms.Button();
-            this.btndi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnafficher
-            // 
-            this.btnafficher.Location = new System.Drawing.Point(785, 417);
-            this.btnafficher.Name = "btnafficher";
-            this.btnafficher.Size = new System.Drawing.Size(113, 38);
-            this.btnafficher.TabIndex = 19;
-            this.btnafficher.Text = "Afficher";
-            this.btnafficher.UseVisualStyleBackColor = true;
-            this.btnafficher.Click += new System.EventHandler(this.btnafficher_Click);
             // 
             // cbx
             // 
@@ -179,7 +168,6 @@
             this.panel1.Controls.Add(this.lbldi);
             this.panel1.Controls.Add(this.txtfin);
             this.panel1.Controls.Add(this.lblfin);
-            this.panel1.Controls.Add(this.btnafficher);
             this.panel1.Controls.Add(this.cbx);
             this.panel1.Controls.Add(this.lblex);
             this.panel1.Controls.Add(this.txtid);
@@ -197,6 +185,73 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1213, 489);
             this.panel1.TabIndex = 2;
+            // 
+            // btndi
+            // 
+            this.btndi.Location = new System.Drawing.Point(1079, 325);
+            this.btndi.Name = "btndi";
+            this.btndi.Size = new System.Drawing.Size(113, 39);
+            this.btndi.TabIndex = 28;
+            this.btndi.Text = "DCM";
+            this.btndi.UseVisualStyleBackColor = true;
+            this.btndi.Click += new System.EventHandler(this.btndi_Click);
+            // 
+            // btnouvert
+            // 
+            this.btnouvert.Location = new System.Drawing.Point(1079, 268);
+            this.btnouvert.Name = "btnouvert";
+            this.btnouvert.Size = new System.Drawing.Size(113, 39);
+            this.btnouvert.TabIndex = 27;
+            this.btnouvert.Text = "Q.Ouvert";
+            this.btnouvert.UseVisualStyleBackColor = true;
+            this.btnouvert.Click += new System.EventHandler(this.btnouvert_Click);
+            // 
+            // btnqcm
+            // 
+            this.btnqcm.Location = new System.Drawing.Point(1079, 209);
+            this.btnqcm.Name = "btnqcm";
+            this.btnqcm.Size = new System.Drawing.Size(113, 39);
+            this.btnqcm.TabIndex = 26;
+            this.btnqcm.Text = "QCM";
+            this.btnqcm.UseVisualStyleBackColor = true;
+            this.btnqcm.Click += new System.EventHandler(this.btnqcm_Click);
+            // 
+            // txtqcm
+            // 
+            this.txtqcm.Location = new System.Drawing.Point(300, 255);
+            this.txtqcm.Multiline = true;
+            this.txtqcm.Name = "txtqcm";
+            this.txtqcm.Size = new System.Drawing.Size(286, 31);
+            this.txtqcm.TabIndex = 25;
+            // 
+            // txtouvert
+            // 
+            this.txtouvert.Location = new System.Drawing.Point(300, 307);
+            this.txtouvert.Multiline = true;
+            this.txtouvert.Name = "txtouvert";
+            this.txtouvert.Size = new System.Drawing.Size(286, 31);
+            this.txtouvert.TabIndex = 24;
+            // 
+            // lblqcm
+            // 
+            this.lblqcm.AutoSize = true;
+            this.lblqcm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblqcm.Location = new System.Drawing.Point(38, 261);
+            this.lblqcm.Name = "lblqcm";
+            this.lblqcm.Size = new System.Drawing.Size(170, 25);
+            this.lblqcm.TabIndex = 23;
+            this.lblqcm.Text = "id question QCM :";
+            // 
+            // lbldi
+            // 
+            this.lbldi.AutoSize = true;
+            this.lbldi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldi.Location = new System.Drawing.Point(35, 116);
+            this.lbldi.Name = "lbldi";
+            this.lbldi.Size = new System.Drawing.Size(238, 25);
+            this.lbldi.TabIndex = 22;
+            this.lbldi.Text = "id question dichotomique :";
+            this.lbldi.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtfin
             // 
@@ -223,73 +278,6 @@
             this.txtquestion.Size = new System.Drawing.Size(286, 31);
             this.txtquestion.TabIndex = 2;
             // 
-            // lbldi
-            // 
-            this.lbldi.AutoSize = true;
-            this.lbldi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldi.Location = new System.Drawing.Point(35, 116);
-            this.lbldi.Name = "lbldi";
-            this.lbldi.Size = new System.Drawing.Size(238, 25);
-            this.lbldi.TabIndex = 22;
-            this.lbldi.Text = "id question dichotomique :";
-            this.lbldi.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblqcm
-            // 
-            this.lblqcm.AutoSize = true;
-            this.lblqcm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblqcm.Location = new System.Drawing.Point(38, 261);
-            this.lblqcm.Name = "lblqcm";
-            this.lblqcm.Size = new System.Drawing.Size(170, 25);
-            this.lblqcm.TabIndex = 23;
-            this.lblqcm.Text = "id question QCM :";
-            // 
-            // txtouvert
-            // 
-            this.txtouvert.Location = new System.Drawing.Point(300, 307);
-            this.txtouvert.Multiline = true;
-            this.txtouvert.Name = "txtouvert";
-            this.txtouvert.Size = new System.Drawing.Size(286, 31);
-            this.txtouvert.TabIndex = 24;
-            // 
-            // txtqcm
-            // 
-            this.txtqcm.Location = new System.Drawing.Point(300, 255);
-            this.txtqcm.Multiline = true;
-            this.txtqcm.Name = "txtqcm";
-            this.txtqcm.Size = new System.Drawing.Size(286, 31);
-            this.txtqcm.TabIndex = 25;
-            // 
-            // btnqcm
-            // 
-            this.btnqcm.Location = new System.Drawing.Point(1079, 209);
-            this.btnqcm.Name = "btnqcm";
-            this.btnqcm.Size = new System.Drawing.Size(113, 39);
-            this.btnqcm.TabIndex = 26;
-            this.btnqcm.Text = "QCM";
-            this.btnqcm.UseVisualStyleBackColor = true;
-            this.btnqcm.Click += new System.EventHandler(this.btnqcm_Click);
-            // 
-            // btnouvert
-            // 
-            this.btnouvert.Location = new System.Drawing.Point(1079, 268);
-            this.btnouvert.Name = "btnouvert";
-            this.btnouvert.Size = new System.Drawing.Size(113, 39);
-            this.btnouvert.TabIndex = 27;
-            this.btnouvert.Text = "Q.Ouvert";
-            this.btnouvert.UseVisualStyleBackColor = true;
-            this.btnouvert.Click += new System.EventHandler(this.btnouvert_Click);
-            // 
-            // btndi
-            // 
-            this.btndi.Location = new System.Drawing.Point(1079, 325);
-            this.btndi.Name = "btndi";
-            this.btndi.Size = new System.Drawing.Size(113, 39);
-            this.btndi.TabIndex = 28;
-            this.btndi.Text = "DCM";
-            this.btndi.UseVisualStyleBackColor = true;
-            this.btndi.Click += new System.EventHandler(this.btndi_Click);
-            // 
             // Examen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -306,8 +294,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnafficher;
         private System.Windows.Forms.ComboBox cbx;
         private System.Windows.Forms.Label lblex;
         private System.Windows.Forms.TextBox txtid;

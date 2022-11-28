@@ -42,6 +42,7 @@ namespace TPExamen
             txtdebut.Enabled = false;
             txtqcm.Enabled = false;
             txtouvert.Enabled = false;
+            cbx.Enabled = true;
 
 
             
@@ -49,7 +50,7 @@ namespace TPExamen
             btnannuler.Enabled = false;
             btnmodifier.Enabled = true;
             btnsupprimer.Enabled = true;
-            btnafficher.Enabled = true;
+        
 
             btnajouter.Enabled = true;
         }
@@ -77,8 +78,7 @@ namespace TPExamen
             btnvalider.Enabled = true;
             btnajouter.Enabled = false;
             btnsupprimer.Enabled = false;
-            btnafficher.Enabled = false;
-            cbx.Enabled = false;
+            cbx.Enabled = true;
             txtid.Enabled = true;
             txtquestion.Enabled = true;
             txtdebut.Enabled = true;
@@ -96,12 +96,12 @@ namespace TPExamen
             verif = 2;
 
             connection();
-            function_clear();
+           
             btnannuler.Enabled = true;
             btnmodifier.Enabled = false;
             btnvalider.Enabled = true;
             btnsupprimer.Enabled = false;
-            btnafficher.Enabled = false;
+           
             btnajouter.Enabled = false;
             cbx.Enabled = true;
             txtid.Enabled = true;
@@ -126,8 +126,8 @@ namespace TPExamen
             btnvalider.Enabled = true;
             btnsupprimer.Enabled = false;
             btnajouter.Enabled = false;
-            btnafficher.Enabled = false;
-            cbx.Enabled = false;
+           
+            cbx.Enabled = true;
             txtid.Enabled = true;
             txtquestion.Enabled = false;
             txtdebut.Enabled = false;
@@ -150,6 +150,7 @@ namespace TPExamen
 
                 cmd.CommandText = "insert into Examen(id,id_questiondi,id_questionqcm,id_questionouvert,date_debut,date_fin) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtqcm.Text + "','" + txtouvert.Text + "','" + txtdebut.Text + "','" + txtfin.Text + "') ";
                 cmd.ExecuteNonQuery();
+                cbx_affichage();
                 etatinitial();
                 cnx.Close();
 
@@ -167,6 +168,7 @@ namespace TPExamen
 
                 cmd.CommandText = "update Examen set id ='" + txtid.Text + "' , id_questiondi = '" + txtquestion.Text + "', id_questionqcm = '" + txtqcm.Text + "', id_questionouvert = '" + txtouvert.Text + "', date_debut = '" + txtdebut.Text + "', date_fin = '" + txtfin.Text + "' where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
+                cbx_affichage();
                 cnx.Close();
 
                 etatinitial();
@@ -186,8 +188,8 @@ namespace TPExamen
                 cmd.CommandText = "delete from Examen where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(" les données bien supprimer!");
-
-                cnx.Close();
+                cbx_affichage();
+                cnx.Close() ;
 
                 etatinitial();
                 cnx.Close();
@@ -198,7 +200,7 @@ namespace TPExamen
             etatinitial();
         }
 
-        private void btnafficher_Click(object sender, EventArgs e)
+       /* private void btnafficher_Click(object sender, EventArgs e)
         {
 
             connection();
@@ -238,11 +240,16 @@ namespace TPExamen
 
 
 
-        }
+        }*/
 
         private void Examen_Load(object sender, EventArgs e)
         {
+
+            connection();
+            cbx_affichage();
+            cnx.Close();
             etatinitial();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -267,6 +274,53 @@ namespace TPExamen
 
            Dichotomique  f = new Dichotomique();
             f.Show();
+     
+        
         }
+
+        public void cbx_affichage()
+        {
+           
+            btnannuler.Enabled = false;
+            btnmodifier.Enabled = true;
+            btnvalider.Enabled = false;
+            btnsupprimer.Enabled = true;
+           
+            cbx.Enabled = true;
+            txtid.Enabled = false;
+            txtquestion.Enabled = false;
+
+            txtdebut.Enabled = false;
+            txtfin.Enabled = false;
+            cmd.CommandText = "select * from Examen";
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            cbx.DataSource = dt;
+            cbx.ValueMember = "id";
+            cbx.DisplayMember = "question";
+            cnx.Close();
+            txtid.DataBindings.Clear();
+            txtquestion.DataBindings.Clear();
+            txtdebut.DataBindings.Clear();
+            txtfin.DataBindings.Clear();
+            txtqcm.DataBindings.Clear();
+            txtouvert.DataBindings.Clear();
+
+            txtid.DataBindings.Add("text", cbx.DataSource, "id");
+            txtquestion.DataBindings.Add("text", cbx.DataSource, "id_questiondi");
+            txtdebut.DataBindings.Add("text", cbx.DataSource, "date_debut");
+            txtfin.DataBindings.Add("text", cbx.DataSource, "date_fin");
+            txtqcm.DataBindings.Add("text", cbx.DataSource, "id_questionqcm");
+            txtouvert.DataBindings.Add("text", cbx.DataSource, "id_questionouvert");
+
+            
+        }
+
+
+
+
+
     }
+
 }
