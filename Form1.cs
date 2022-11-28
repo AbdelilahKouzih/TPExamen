@@ -47,7 +47,8 @@ namespace TPExamen
             btnannuler.Enabled = false;
             btnmodifier.Enabled = true;
             btnsupprimer.Enabled = true;
-            btnafficher.Enabled = true;
+            cbx.Enabled = true;
+         
           
             btnajouter.Enabled = true;
         }
@@ -78,8 +79,8 @@ namespace TPExamen
             btnvalider.Enabled = true;
             btnajouter.Enabled = false;
             btnsupprimer.Enabled = false;
-            btnafficher.Enabled = false;
-            cbx.Enabled = false;
+           
+            cbx.Enabled = true;
             txtid.Enabled = true;
             txtquestion.Enabled = true;
             txtop1.Enabled = true;
@@ -110,6 +111,7 @@ namespace TPExamen
 
                 cmd.CommandText = "insert into QuestionQCM(id,question,option1,option2,option3,reponse) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtop1.Text + "''," + txtop1.Text + "','" + txtop2.Text + "','" + txtop1.Text + "','" + txtreponse.Text + "') ";
                 cmd.ExecuteNonQuery();
+                cbx_affichage();
                 etatinitial();
                 cnx.Close();
 
@@ -127,6 +129,7 @@ namespace TPExamen
            
                 cmd.CommandText = "update QuestionQCM set id ='" + txtid.Text + "' ,question = '" + txtquestion.Text + "',option1 = '" + txtop1.Text + "',option2 = '" + txtop2.Text + "',option3 = '" + txtop3.Text + "',reponse = '" + txtreponse.Text + "' where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
+                cbx_affichage();
                 cnx.Close();
 
                 etatinitial();
@@ -158,6 +161,9 @@ namespace TPExamen
 
         private void Form1_Load(object sender, EventArgs e)
         {
+           connection();
+            cbx_affichage();
+            cnx.Close();
             etatinitial();
         }
 
@@ -174,7 +180,7 @@ namespace TPExamen
             btnmodifier.Enabled = true;
             btnvalider.Enabled = false;
             btnsupprimer.Enabled = true;
-            btnafficher.Enabled = false;
+           
             cbx.Enabled = true;
             txtid.Enabled = false;
             txtquestion.Enabled = false;
@@ -216,7 +222,7 @@ namespace TPExamen
             btnmodifier.Enabled = false;
             btnvalider.Enabled = true;
             btnsupprimer.Enabled = false;
-            btnafficher.Enabled = false;
+           
             btnajouter.Enabled = false;
             cbx.Enabled = true;
             txtid.Enabled = true;
@@ -240,8 +246,8 @@ namespace TPExamen
             btnvalider.Enabled = true;
             btnsupprimer.Enabled = false;
             btnajouter.Enabled = false;
-            btnafficher.Enabled = false;
-            cbx.Enabled = false;
+         
+            cbx.Enabled =true;
             txtid.Enabled = true;
             txtquestion.Enabled = false;
             txtop1.Enabled = false;
@@ -267,6 +273,47 @@ namespace TPExamen
         {
            
            
+        }
+
+        public void cbx_affichage()
+        {
+            btnannuler.Enabled = false;
+            btnmodifier.Enabled = true;
+            btnvalider.Enabled = false;
+            btnsupprimer.Enabled = true;
+          
+            cbx.Enabled = true;
+            txtid.Enabled = false;
+            txtquestion.Enabled = false;
+            txtop1.Enabled = false;
+            txtop2.Enabled = false;
+            txtop3.Enabled = false;
+            txtreponse.Enabled = false;
+            cmd.CommandText = "select * from QuestionQCM";
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            cbx.DataSource = dt;
+            cbx.ValueMember = "id";
+            cbx.DisplayMember = "question";
+            cnx.Close();
+            txtid.DataBindings.Clear();
+            txtquestion.DataBindings.Clear();
+            txtreponse.DataBindings.Clear();
+
+            txtop1.DataBindings.Clear();
+            txtop2.DataBindings.Clear();
+            txtop3.DataBindings.Clear();
+
+            txtop1.DataBindings.Add("text", cbx.DataSource, "option1");
+            txtop2.DataBindings.Add("text", cbx.DataSource, "option2");
+            txtop3.DataBindings.Add("text", cbx.DataSource, "option3");
+            txtid.DataBindings.Add("text", cbx.DataSource, "id");
+            txtquestion.DataBindings.Add("text", cbx.DataSource, "question");
+            txtreponse.DataBindings.Add("text", cbx.DataSource, "reponse");
+
+
+
         }
     }
 }

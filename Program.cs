@@ -16,7 +16,7 @@ namespace TPExamen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Examen());
+            Application.Run(new Form1());
         }
 
 

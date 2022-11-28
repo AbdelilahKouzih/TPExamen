@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnafficher = new System.Windows.Forms.Button();
+            this.btnexamen = new System.Windows.Forms.Button();
             this.cbx = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
@@ -48,7 +48,6 @@
             this.op1 = new System.Windows.Forms.Label();
             this.txtquestion = new System.Windows.Forms.TextBox();
             this.lblquestion = new System.Windows.Forms.Label();
-            this.btnexamen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +55,6 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.Controls.Add(this.btnexamen);
-            this.panel1.Controls.Add(this.btnafficher);
             this.panel1.Controls.Add(this.cbx);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtid);
@@ -81,15 +79,15 @@
             this.panel1.Size = new System.Drawing.Size(1044, 500);
             this.panel1.TabIndex = 0;
             // 
-            // btnafficher
+            // btnexamen
             // 
-            this.btnafficher.Location = new System.Drawing.Point(544, 427);
-            this.btnafficher.Name = "btnafficher";
-            this.btnafficher.Size = new System.Drawing.Size(116, 38);
-            this.btnafficher.TabIndex = 19;
-            this.btnafficher.Text = "Afficher";
-            this.btnafficher.UseVisualStyleBackColor = true;
-            this.btnafficher.Click += new System.EventHandler(this.btnafficher_Click);
+            this.btnexamen.Location = new System.Drawing.Point(839, 318);
+            this.btnexamen.Name = "btnexamen";
+            this.btnexamen.Size = new System.Drawing.Size(110, 38);
+            this.btnexamen.TabIndex = 20;
+            this.btnexamen.Text = "Examen";
+            this.btnexamen.UseVisualStyleBackColor = true;
+            this.btnexamen.Click += new System.EventHandler(this.btnexamen_Click);
             // 
             // cbx
             // 
@@ -254,16 +252,6 @@
             this.lblquestion.TabIndex = 1;
             this.lblquestion.Text = "Question    :";
             // 
-            // btnexamen
-            // 
-            this.btnexamen.Location = new System.Drawing.Point(839, 318);
-            this.btnexamen.Name = "btnexamen";
-            this.btnexamen.Size = new System.Drawing.Size(110, 38);
-            this.btnexamen.TabIndex = 20;
-            this.btnexamen.Text = "Examen";
-            this.btnexamen.UseVisualStyleBackColor = true;
-            this.btnexamen.Click += new System.EventHandler(this.btnexamen_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,7 +287,6 @@
         private System.Windows.Forms.TextBox txtreponse;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtid;
-        private System.Windows.Forms.Button btnafficher;
         private System.Windows.Forms.ComboBox cbx;
         private System.Windows.Forms.Button btnexamen;
     }
