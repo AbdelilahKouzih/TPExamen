@@ -45,7 +45,8 @@ namespace TPExamen
             btnannuler.Enabled = false;
             btnmodifier.Enabled = true;
             btnsupprimer.Enabled = true;
-            btnafficher.Enabled = true;
+            
+            cbx.Enabled = true;
 
             btnajouter.Enabled = true;
         }
@@ -69,8 +70,8 @@ namespace TPExamen
             btnvalider.Enabled = true;
             btnajouter.Enabled = false;
             btnsupprimer.Enabled = false;
-            btnafficher.Enabled = false;
-            cbx.Enabled = false;
+            
+            cbx.Enabled = true;
             txtid.Enabled = true;
             txtquestion.Enabled = true;
 
@@ -80,6 +81,9 @@ namespace TPExamen
 
         private void Dichotomique_Load(object sender, EventArgs e)
         {
+            connection();
+            cbx_affichage();
+            cnx.Close();
             etatinitial();
         }
 
@@ -94,7 +98,7 @@ namespace TPExamen
             btnmodifier.Enabled = false;
             btnvalider.Enabled = true;
             btnsupprimer.Enabled = false;
-            btnafficher.Enabled = false;
+            
             btnajouter.Enabled = false;
             cbx.Enabled = true;
             txtid.Enabled = true;
@@ -116,8 +120,8 @@ namespace TPExamen
             btnvalider.Enabled = true;
             btnsupprimer.Enabled = false;
             btnajouter.Enabled = false;
-            btnafficher.Enabled = false;
-            cbx.Enabled = false;
+           
+            cbx.Enabled = true;
             txtid.Enabled = true;
             txtquestion.Enabled = false;
 
@@ -140,6 +144,7 @@ namespace TPExamen
 
                 cmd.CommandText = "insert into Dichotomique(id,question,reponse) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtreponse.Text + "') ";
                 cmd.ExecuteNonQuery();
+                cbx_affichage();
                 etatinitial();
                 cnx.Close();
 
@@ -157,6 +162,7 @@ namespace TPExamen
 
                 cmd.CommandText = "update Dichotomique set id ='" + txtid.Text + "' , question = '" + txtquestion.Text + "', reponse = '" + txtreponse.Text + "' where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
+                cbx_affichage();
                 cnx.Close();
 
                 etatinitial();
@@ -176,6 +182,7 @@ namespace TPExamen
                 cmd.CommandText = "delete from Dichotomique where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(" les données bien supprimer!");
+                cbx_affichage();
 
                 cnx.Close();
 
@@ -196,7 +203,7 @@ namespace TPExamen
             etatinitial();
         }
 
-        private void btnafficher_Click_1(object sender, EventArgs e)
+      /*  private void btnafficher_Click_1(object sender, EventArgs e)
         {
             connection();
 
@@ -230,12 +237,53 @@ namespace TPExamen
             txtreponse.DataBindings.Add("text", cbx.DataSource, "reponse");
 
 
-        }
+        }*/
 
         private void btnexamen_Click(object sender, EventArgs e)
         {
             Examen D = new Examen();
             D.Show();
+        }
+
+
+        public void cbx_affichage()
+        {
+            btnannuler.Enabled = false;
+            btnmodifier.Enabled = true;
+            btnvalider.Enabled = false;
+            btnsupprimer.Enabled = true;
+
+            cbx.Enabled = true;
+            txtid.Enabled = false;
+            txtquestion.Enabled = false;
+           
+            txtreponse.Enabled = false;
+            cmd.CommandText = "select * from Dichotomique";
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            cbx.DataSource = dt;
+            cbx.ValueMember = "id";
+            cbx.DisplayMember = "question";
+            cnx.Close();
+            txtid.DataBindings.Clear();
+            txtquestion.DataBindings.Clear();
+            txtreponse.DataBindings.Clear();
+
+           
+
+            
+            txtid.DataBindings.Add("text", cbx.DataSource, "id");
+            txtquestion.DataBindings.Add("text", cbx.DataSource, "question");
+            txtreponse.DataBindings.Add("text", cbx.DataSource, "reponse");
+
+
+
+        }
+
+        private void txtreponse_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
