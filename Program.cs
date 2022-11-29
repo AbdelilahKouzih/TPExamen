@@ -16,7 +16,7 @@ namespace TPExamen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Dichotomique());
+            Application.Run(new Examen());
         }
 
 

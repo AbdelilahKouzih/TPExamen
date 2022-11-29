@@ -42,6 +42,7 @@ namespace TPExamen
             txtdebut.Enabled = false;
             txtqcm.Enabled = false;
             txtouvert.Enabled = false;
+            txtnote.Enabled = false;
             cbx.Enabled = true;
 
 
@@ -63,6 +64,7 @@ namespace TPExamen
             txtdebut.Clear();
             txtqcm.Clear();
             txtouvert.Clear();
+            txtnote.Clear();
 
             
 
@@ -85,6 +87,7 @@ namespace TPExamen
             txtfin.Enabled = true;
             txtouvert.Enabled = true;
             txtqcm.Enabled = true;
+            txtnote.Enabled = true;
             
 
             
@@ -110,6 +113,7 @@ namespace TPExamen
             txtfin.Enabled = true;
             txtouvert.Enabled = true;
             txtqcm.Enabled = true;
+            txtnote.Enabled = true;
            
 
             cnx.Close();
@@ -134,6 +138,7 @@ namespace TPExamen
             txtfin.Enabled = false;
             txtouvert.Enabled = false;
             txtqcm.Enabled = false;
+            txtnote.Enabled = false;
             cnx.Close();
         }
 
@@ -148,7 +153,7 @@ namespace TPExamen
                 }
                 connection();
 
-                cmd.CommandText = "insert into Examen(id,id_questiondi,id_questionqcm,id_questionouvert,date_debut,date_fin) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtqcm.Text + "','" + txtouvert.Text + "','" + txtdebut.Text + "','" + txtfin.Text + "') ";
+                cmd.CommandText = "insert into Examen(id,id_questiondi,id_questionqcm,id_questionouvert,date_debut,date_fin,note) values('" + txtid.Text + "','" + txtquestion.Text + "','" + txtqcm.Text + "','" + txtouvert.Text + "','" + txtdebut.Text + "','" + txtfin.Text + "','" + txtnote.Text + "') ";
                 cmd.ExecuteNonQuery();
                 cbx_affichage();
                 etatinitial();
@@ -166,7 +171,7 @@ namespace TPExamen
                 }
                 connection();
 
-                cmd.CommandText = "update Examen set id ='" + txtid.Text + "' , id_questiondi = '" + txtquestion.Text + "', id_questionqcm = '" + txtqcm.Text + "', id_questionouvert = '" + txtouvert.Text + "', date_debut = '" + txtdebut.Text + "', date_fin = '" + txtfin.Text + "' where id='" + txtid.Text + "' ";
+                cmd.CommandText = "update Examen set id ='" + txtid.Text + "' , id_questiondi = '" + txtquestion.Text + "', id_questionqcm = '" + txtqcm.Text + "', id_questionouvert = '" + txtouvert.Text + "', date_debut = '" + txtdebut.Text + "', date_fin = '" + txtfin.Text + "',note = '" + txtnote.Text + "' where id='" + txtid.Text + "' ";
                 cmd.ExecuteNonQuery();
                 cbx_affichage();
                 cnx.Close();
@@ -292,6 +297,7 @@ namespace TPExamen
 
             txtdebut.Enabled = false;
             txtfin.Enabled = false;
+            txtnote.Enabled = false;
             cmd.CommandText = "select * from Examen";
 
             DataTable dt = new DataTable();
@@ -306,6 +312,7 @@ namespace TPExamen
             txtfin.DataBindings.Clear();
             txtqcm.DataBindings.Clear();
             txtouvert.DataBindings.Clear();
+            txtnote.DataBindings.Clear();
 
             txtid.DataBindings.Add("text", cbx.DataSource, "id");
             txtquestion.DataBindings.Add("text", cbx.DataSource, "id_questiondi");
@@ -313,14 +320,14 @@ namespace TPExamen
             txtfin.DataBindings.Add("text", cbx.DataSource, "date_fin");
             txtqcm.DataBindings.Add("text", cbx.DataSource, "id_questionqcm");
             txtouvert.DataBindings.Add("text", cbx.DataSource, "id_questionouvert");
-
+            txtnote.DataBindings.Add("text", cbx.DataSource, "note");
             
         }
 
+        private void label1_Click_1(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 
 }

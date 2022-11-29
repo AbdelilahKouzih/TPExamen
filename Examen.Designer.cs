@@ -50,6 +50,8 @@
             this.txtfin = new System.Windows.Forms.TextBox();
             this.lblfin = new System.Windows.Forms.Label();
             this.txtquestion = new System.Windows.Forms.TextBox();
+            this.lblnote = new System.Windows.Forms.Label();
+            this.txtnote = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,6 +161,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.Controls.Add(this.txtnote);
+            this.panel1.Controls.Add(this.lblnote);
             this.panel1.Controls.Add(this.btndi);
             this.panel1.Controls.Add(this.btnouvert);
             this.panel1.Controls.Add(this.btnqcm);
@@ -278,6 +282,24 @@
             this.txtquestion.Size = new System.Drawing.Size(286, 31);
             this.txtquestion.TabIndex = 2;
             // 
+            // lblnote
+            // 
+            this.lblnote.AutoSize = true;
+            this.lblnote.Location = new System.Drawing.Point(38, 362);
+            this.lblnote.Name = "lblnote";
+            this.lblnote.Size = new System.Drawing.Size(74, 25);
+            this.lblnote.TabIndex = 29;
+            this.lblnote.Text = "Note   :";
+            this.lblnote.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // txtnote
+            // 
+            this.txtnote.Location = new System.Drawing.Point(300, 356);
+            this.txtnote.Multiline = true;
+            this.txtnote.Name = "txtnote";
+            this.txtnote.Size = new System.Drawing.Size(286, 31);
+            this.txtnote.TabIndex = 30;
+            // 
             // Examen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,5 +338,7 @@
         private System.Windows.Forms.Button btndi;
         private System.Windows.Forms.Button btnouvert;
         private System.Windows.Forms.Button btnqcm;
+        private System.Windows.Forms.Label lblnote;
+        private System.Windows.Forms.TextBox txtnote;
     }
 }
